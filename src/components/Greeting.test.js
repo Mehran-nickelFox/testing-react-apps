@@ -1,12 +1,22 @@
 import { render, screen } from "@testing-library/react";
 import Greeting from "./Greeting";
-test("renders hello World", () => {
-  //Arrange:
-  render(<Greeting />);
-  //Act:in this expample ther is notting to act upon
-  //so we will do it later
+describe("<Greeting />", () => {
+  //simple test GETBYTEXT
+  test("renders hello World", () => {
+    //Arrange:
+    render(<Greeting />);
+    //Act:in this expample ther is notting to act upon
+    //so we will do it later
 
-  //Assert:
-  const helloWorldElement = screen.getByText("Hello World");
-  expect(helloWorldElement).toBeInTheDocument();
+    //Assert:
+    const helloWorldElement = screen.getByText("Hello World");
+    expect(helloWorldElement).toBeInTheDocument();
+  });
+
+  //Simple test QueryByText and .not method
+  test("render Hi", () => {
+    render(<Greeting />);
+    const hiElement = screen.queryByText("HI");
+    expect(hiElement).not.toBeInTheDocument();
+  });
 });
