@@ -8,8 +8,9 @@ const SayHello = () => {
   return (
     <div>
       SayHello
-      {!changedText && <p>Good to see you!</p>}
-      {changedText && <p>Changed!</p>}
+      {/*this is an example for nested component: Integration Testing*/}
+      {!changedText && <Output>Good to see you!</Output>}
+      {changedText && <Output>Changed!</Output>}
       <button onClick={handleText}>Change Text</button>
     </div>
   );
